@@ -1,0 +1,19 @@
+For this challenge the issue was wrong use of instruction
+
+test.S: Assembler messages:
+test.S:15855: Error: illegal operands `and s7,ra,z4'
+test.S:25584: Error: illegal operands `andi s5,t1,s0'
+make: *** [Makefile:4: compile] Error 1
+
+1) error reason for illegal operands `and s7,ra,z4' is there is no register named z4 in ABI we could use s4 or t4
+
+fix
+    use any of the register s4 or t4
+
+2) eroor reason for illegal operands `andi s5,t1,s0' in the ISA its we can use ANDI destination can be a register and source 1 canbe a register but source 2 has to be a immidate value
+
+
+fix
+
+    1)remove instruction from the code 
+    2) find correct value os s0 at that stage and use it as immidiate value
