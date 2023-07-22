@@ -10,10 +10,12 @@ make: *** [Makefile:4: compile] Error 1
 fix
     use any of the register s4 or t4
 
-2) eroor reason for illegal operands `andi s5,t1,s0' in the ISA its we can use ANDI destination can be a register and source 1 canbe a register but source 2 has to be a immidate value
+2) eroor reason for illegal operands `andi s5,t1,s0' in the ISA its we can use ANDI destination can be a register and source 1 canbe a register but source 2 has to be a immidate value 
 
 
 fix
 
     1)remove instruction from the code 
-    2) find correct value os s0 at that stage and use it as immidiate value
+    2) fix the insturction it self change andi to and 
+
+    choosed option 2 that make more sense due to all other instructon is and
