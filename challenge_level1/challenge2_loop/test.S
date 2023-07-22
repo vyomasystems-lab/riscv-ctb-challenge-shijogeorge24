@@ -14,13 +14,20 @@ RVTEST_CODE_BEGIN
   li t5, 3
 
 loop:
+  li t6,1
+  beq x0, t5, over
+  sub t5,t5,t6
 	lw t1, (t0)
   lw t2, 4(t0)
   lw t3, 8(t0)
   add t4, t1, t2
   addi t0, t0, 12
-  beq t3, t4, loop        # check if sum is correct
-  j fail
+  bne t3, t4, fail
+  j loop
+over:j pass  
+  #beq t3, t4, loop  
+  # check if sum is correct
+
 
 test_end:
 
